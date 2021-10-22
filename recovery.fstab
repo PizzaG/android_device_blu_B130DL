@@ -1,0 +1,51 @@
+# Logical Partitions
+/system             ext4      system                                                                flags=display="System";backup=1;logical;
+/system_image       emmc      system                                                                flags=display="System image";backup=1;flashimg=1;logical;
+/vendor             ext4      vendor                                                                flags=display="Vendor";backup=1;logical;
+/vendor_image       emmc      vendor                                                                flags=display="Vendor image";backup=1;flashimg=1;logical;
+/product            ext4      product                                                               flags=display="Product";backup=1;logical;
+/product_image      emmc      product                                                               flags=display="Product image";backup=1;flashimg=1;logical;
+
+# Standard Partitions
+/metadata           ext4      /dev/block/platform/bootdevice/by-name/md_udc                         
+/data               ext4      /dev/block/platform/bootdevice/by-name/userdata                       flags=display="Data";
+/cache              ext4      /dev/block/platform/bootdevice/by-name/cache                          flags=display="Cache";
+/protect_f          ext4      /dev/block/platform/bootdevice/by-name/protect1                       
+/protect_s          ext4      /dev/block/platform/bootdevice/by-name/protect2                       
+/nvdata             ext4      /dev/block/platform/bootdevice/by-name/nvdata                         
+/nvcfg              ext4      /dev/block/platform/bootdevice/by-name/nvcfg                          
+/persist            ext4      /dev/block/platform/bootdevice/by-name/persist                        
+/persist_image      emmc      /dev/block/platform/bootdevice/by-name/persist                        
+/persistent         emmc      /dev/block/platform/bootdevice/by-name/frp                            
+/nvram              emmc      /dev/block/platform/bootdevice/by-name/nvram                          
+/proinfo            emmc      /dev/block/platform/bootdevice/by-name/proinfo                        
+/lk		            emmc	  /dev/block/platform/bootdevice/by-name/lk		                        flags=display="LK";backup=1;flashimg=1
+/lk2		        emmc	  /dev/block/platform/bootdevice/by-name/lk2		                    flags=backup=0;flashimg=0;subpartitionof=/lk        
+/misc               emmc      /dev/block/platform/bootdevice/by-name/para                           
+/recovery           emmc      /dev/block/platform/bootdevice/by-name/recovery                       
+/boot               emmc      /dev/block/platform/bootdevice/by-name/boot                           flags=display="Boot";backup=1;flashimg=1;
+/vbmeta_vendor      emmc      /dev/block/platform/bootdevice/by-name/vbmeta_vendor                  
+/vbmeta_system      emmc      /dev/block/platform/bootdevice/by-name/vbmeta_system                  
+/logo               emmc      /dev/block/platform/bootdevice/by-name/logo                           
+/expdb              emmc      /dev/block/platform/bootdevice/by-name/expdb                          
+/seccfg             emmc      /dev/block/platform/bootdevice/by-name/seccfg                         
+/tee1               emmc      /dev/block/platform/bootdevice/by-name/tee1                           
+/tee2               emmc      /dev/block/platform/bootdevice/by-name/tee2                           
+/scp1               emmc      /dev/block/platform/bootdevice/by-name/scp1                           
+/scp2               emmc      /dev/block/platform/bootdevice/by-name/scp2                           
+/sspm_1             emmc      /dev/block/platform/bootdevice/by-name/sspm_1                         
+/sspm_2             emmc      /dev/block/platform/bootdevice/by-name/sspm_2                         
+/md1img             emmc      /dev/block/platform/bootdevice/by-name/md1img                         
+/md1dsp             emmc      /dev/block/platform/bootdevice/by-name/md1dsp                         
+/md1arm7            emmc      /dev/block/platform/bootdevice/by-name/md1arm7                        
+/md3img             emmc      /dev/block/platform/bootdevice/by-name/md3img                         
+/spmfw              emmc      /dev/block/platform/bootdevice/by-name/spmfw                          
+/boot_para          emmc      /dev/block/platform/bootdevice/by-name/boot_para                      
+/dtbo1              emmc      /dev/block/platform/bootdevice/by-name/dtbo1                          
+/dtbo2              emmc      /dev/block/platform/bootdevice/by-name/dtbo2                          
+/dtbo               emmc      /dev/block/platform/bootdevice/by-name/dtbo                           
+/vbmeta             emmc      /dev/block/platform/bootdevice/by-name/vbmeta                         flags=display="Vbmeta";backup=1;flashimg=1;
+
+# External Storage
+/external_sd        vfat     /dev/block/mmcblk1p1       /dev/block/mmcblk1                         flags=fsflags=utf8;display=Micro-SDcard;storage;wipeingui;removable
+/usbotg             auto     /dev/block/sda1		      /dev/block/sda                           flags=display="USB-OTG";storage;removable;backup=0 
