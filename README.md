@@ -1,0 +1,1 @@
+# android_device_blu_B130DL
