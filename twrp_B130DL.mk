@@ -14,14 +14,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, device/blu/B130DL/device.mk)
 
 # Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
-$(call inherit-product, vendor/omni/config/gsm.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/blu/B130DL/recovery/root,recovery/root)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := B130DL
-PRODUCT_NAME := omni_B130DL
+PRODUCT_NAME := twrp_B130DL
 PRODUCT_BRAND := View
 PRODUCT_MODEL := B130DL
 PRODUCT_MANUFACTURER := Blu
