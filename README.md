@@ -1,6 +1,6 @@
 TWRP Device Tree
 
-TWRP Based On Android 10
+TWRP Based On Android 12.1
 
 Blu View 2- B130DL
 
